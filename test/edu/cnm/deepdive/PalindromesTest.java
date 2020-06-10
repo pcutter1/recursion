@@ -52,11 +52,21 @@ class PalindromesTest {
 
   @Test
   void testDenormalized() {
-    Palindromes recursive = new Palindromes();
+    Palindromes normalized = new Palindromes();
     for (int i = 0; i < normParams.length; i++) {
-      boolean actual = recursive.testDenormalized(normParams[i]);
+      boolean actual = normalized.testDenormalized(normParams[i]);
       assertEquals(normExpected[i], actual);
     }
 
   }
+
+  @Test
+  void testIterative() {
+    Palindromes iterative = new Palindromes();
+    for (int i = 0; i < testParams.length; i++) {
+      boolean actual = iterative.testIterative(testParams[i]);
+      assertEquals(testExpected[i], actual);
+    }
+  }
+
 }

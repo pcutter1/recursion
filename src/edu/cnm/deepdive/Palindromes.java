@@ -23,4 +23,21 @@ public class Palindromes {
     return isPalindrome;
   }
 
+  public static boolean testIterative(String input) {
+    boolean isPalindrome = false;
+    if (input.length() <= 1) {
+      isPalindrome = true;
+    }
+
+    for (int i = 0; i < input.length() / 2; i++) {
+      for (int j = input.length() - 1; j > (input.length() - 1) / 2; j--) {
+        if (input.charAt(i) == input.charAt(j)) {
+          isPalindrome = true;
+        }
+      }
+    }
+
+    return isPalindrome;
+  }
+
 }
