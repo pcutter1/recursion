@@ -27,9 +27,7 @@ public class Factorials {
     if (n < 0) {
       throw new IllegalArgumentException();
     }
-    if (n == 0) {
-      result = BigInteger.valueOf(1);
-    }
+
       for (int i = 1; i <= n; i++) {
         result = BigInteger.valueOf(i).multiply(result);
       }
