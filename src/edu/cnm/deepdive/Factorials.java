@@ -10,13 +10,11 @@ public class Factorials {
    * @throws IllegalArgumentException when n < 0.
    */
   public static BigInteger computeRecursive(int n) throws IllegalArgumentException {
-    BigInteger result;
+    BigInteger result = BigInteger.ONE;
     if (n < 0) {
       throw new IllegalArgumentException();
     }
-    if (n == 0) {
-      result = BigInteger.valueOf(1);
-    } else {
+    if (n > 0) {
       result = BigInteger.valueOf(n).multiply(computeRecursive(n - 1));
     }
     return result;
@@ -27,7 +25,6 @@ public class Factorials {
     if (n < 0) {
       throw new IllegalArgumentException();
     }
-
       for (int i = 1; i <= n; i++) {
         result = BigInteger.valueOf(i).multiply(result);
       }
