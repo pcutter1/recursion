@@ -24,16 +24,12 @@ public class Palindromes {
   }
 
   public static boolean testIterative(String input) {
-    boolean isPalindrome = false;
-    if (input.length() <= 1) {
-      isPalindrome = true;
-    }
+    boolean isPalindrome = true;
 
-    for (int i = 0; i < input.length() / 2; i++) {
-      for (int j = input.length() - 1; j > (input.length() - 1) / 2; j--) {
-        if (input.charAt(i) == input.charAt(j)) {
-          isPalindrome = true;
-        }
+    for (int i = 0, j = input.length() - 1; i < j; i++, j--) {
+      if (input.charAt(i) != input.charAt(j)) {
+        isPalindrome = false;
+        break;
       }
     }
 
