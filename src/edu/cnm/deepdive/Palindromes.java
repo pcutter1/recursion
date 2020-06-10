@@ -2,7 +2,12 @@ package edu.cnm.deepdive;
 
 public class Palindromes {
 
+  public static boolean testDenormalized(String str) {
 
+    str = str.replaceAll("[\\W_]+", "").toLowerCase();
+
+    return testRecursive(str);
+  }
 
   public static boolean testRecursive(String input) {
     boolean isPalindrome = false;
